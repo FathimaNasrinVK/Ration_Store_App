@@ -66,7 +66,8 @@ class Third_Page extends StatelessWidget {
           }
         },
       ),
-      floatingActionButton: Container(width: 200,
+      floatingActionButton:
+      Container(width: 200,
           child: FloatingActionButton(onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context)=>
                 Confirm_page(category: category)));

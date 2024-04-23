@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:ration_app/Owner/ScanningPage/scannning_page.dart';
 import 'package:ration_app/controller/cntrlr.dart';
 import '../../../core/constants/color.dart';
 import '../../second_page/view/secondpage.dart';
@@ -37,7 +38,10 @@ class First_Page extends StatelessWidget {
               height: size*50,
               width:  size*200,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> QR_Scanner()));
+
+                },
                 style: ElevatedButton.styleFrom(backgroundColor: ColorTheme.maincolor,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
 
                 child: Text(
