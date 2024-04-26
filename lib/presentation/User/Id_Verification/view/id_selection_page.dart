@@ -1,13 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:ration_app/presentation/Third_Page/view/thirdpage.dart';
-import '../../../core/constants/color.dart';
+
+import '../../../../core/constants/color.dart';
+import '../../Item_Selection_Page/view/item_selection_page.dart';
 
 
-class SecondPage extends StatelessWidget {
-
-  final ration_num = TextEditingController();
-  final pass= TextEditingController();
+class id_verification extends StatelessWidget {
+  final ration_num =TextEditingController();
+  final pass =TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +17,15 @@ class SecondPage extends StatelessWidget {
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
-            width: size*330,
-            padding: EdgeInsets.symmetric(horizontal: 10),
+            width: size*300,
+            padding: EdgeInsets.symmetric(horizontal: size*10),
             decoration: BoxDecoration(
               color:ColorTheme.secondarycolor,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(size*10),
             ),
             child: TextField(
               controller: ration_num,
+              textInputAction: TextInputAction.next,
               textAlign: TextAlign.center,
               style: TextStyle(color: ColorTheme.maincolor),
               decoration: InputDecoration(
@@ -36,14 +37,15 @@ class SecondPage extends StatelessWidget {
           ),
           SizedBox(height:size*20 ,),
           Container(
-            width:size* 330,
+            width:size* 300,
             padding: EdgeInsets.symmetric(horizontal: size*10),
             decoration: BoxDecoration(
               color:ColorTheme.secondarycolor,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(size*10),
             ),
             child: TextField(
               controller: pass,
+              textInputAction: TextInputAction.next,
               textAlign: TextAlign.center,
               style: TextStyle(color: ColorTheme.maincolor),
               decoration: InputDecoration(
@@ -53,18 +55,15 @@ class SecondPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height:size*20 ,),
-          Container(
-            color: ColorTheme.primarycolor,
-            width:size*190,
-            child: ElevatedButton(onPressed: ()=> _signIn(context),
-              style: ElevatedButton.styleFrom(backgroundColor: ColorTheme.maincolor,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6))),
-              child: Text("OK",style: TextStyle(color: ColorTheme.primarycolor),),),
-          )
+          SizedBox(height:size*30 ,),
+          ElevatedButton(onPressed: ()=> _signIn(context),
+            style: ElevatedButton.styleFrom(backgroundColor: ColorTheme.maincolor,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6))),
+            child: Text("         OK         ",style: TextStyle(color: ColorTheme.primarycolor),),)
 
         ]),
       ),
     );
+
   }
   Future<void> _signIn(BuildContext context) async {
     final String rationCardNumber = ration_num.text;
@@ -78,11 +77,10 @@ class SecondPage extends StatelessWidget {
         .get();
 
     if (querySnapshot.docs.isNotEmpty) {
-      // Navigate to another page with data  if credentials are correct
       DocumentSnapshot documentSnapshot = querySnapshot.docs.first;
       String category = documentSnapshot['category'];
       Navigator.push(context, MaterialPageRoute(builder: (context)=>
-          Third_Page(category: '$category')));
+          item_selction(category: category)));
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Invalid ration card number or password.'),
@@ -90,4 +88,3 @@ class SecondPage extends StatelessWidget {
     }
   }
 }
-

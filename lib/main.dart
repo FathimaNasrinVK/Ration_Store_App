@@ -24,7 +24,7 @@ void main() async {
    Widget build(BuildContext context) {
      return ChangeNotifierProvider(
          create: (context)=>tile_controller(),
-       child: MaterialApp(debugShowCheckedModeBanner: false,home: First_Page(),),
+       child: MaterialApp(debugShowCheckedModeBanner: false,home: user_owner_selection(),),
      );
    }
  }
