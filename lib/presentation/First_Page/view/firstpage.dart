@@ -11,6 +11,7 @@ class user_owner_selection extends StatelessWidget {
   Widget build(BuildContext context) {
     double size = constantsize(context);
     return Scaffold(
+      backgroundColor: ColorTheme.bgcolor,
       body: Center(
         child: Column(
           children: [

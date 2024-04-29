@@ -26,7 +26,7 @@ class Item_Widget extends StatelessWidget {
               decoration: BoxDecoration(
                 color: provider.selectedTileIndices.contains(item['Name'])
                     ? ColorTheme.maincolor
-                    : Colors.white,
+                    : ColorTheme.bgcolor,
                 borderRadius: BorderRadius.circular(size * 20),
                 border: Border.all(
                   color: ColorTheme.maincolor, // Set border color here

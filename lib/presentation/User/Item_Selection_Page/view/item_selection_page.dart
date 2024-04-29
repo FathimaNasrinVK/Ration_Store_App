@@ -16,6 +16,7 @@ class item_selction extends StatelessWidget {
   Widget build(BuildContext context) {
     double size = constantsize(context);
     return Scaffold(
+      backgroundColor: ColorTheme.bgcolor,
       appBar: AppBar(
         backgroundColor: ColorTheme.maincolor,
         title: Text(

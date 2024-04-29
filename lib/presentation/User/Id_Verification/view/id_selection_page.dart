@@ -13,14 +13,14 @@ class id_verification extends StatelessWidget {
   Widget build(BuildContext context) {
     double size = constantsize(context);
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: ColorTheme.bgcolor,
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
             width: size*300,
             padding: EdgeInsets.symmetric(horizontal: size*10),
             decoration: BoxDecoration(
-              color:ColorTheme.secondarycolor,
+              color:ColorTheme.primarycolor,
               borderRadius: BorderRadius.circular(size*10),
             ),
             child: TextField(
@@ -40,7 +40,7 @@ class id_verification extends StatelessWidget {
             width:size* 300,
             padding: EdgeInsets.symmetric(horizontal: size*10),
             decoration: BoxDecoration(
-              color:ColorTheme.secondarycolor,
+              color:ColorTheme.primarycolor,
               borderRadius: BorderRadius.circular(size*10),
             ),
             child: TextField(

@@ -20,6 +20,7 @@ class Confirm_selection extends StatelessWidget {
       'mapList': datas,
     };
     return Scaffold(
+      backgroundColor: ColorTheme.bgcolor,
       appBar: AppBar(
         backgroundColor: ColorTheme.maincolor,
         title: Text(category,style: TextStyle(color: Colors.white),),centerTitle: true,
