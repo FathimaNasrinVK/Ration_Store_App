@@ -60,7 +60,7 @@ class Item_Widget extends StatelessWidget {
                                   fontSize: size * 15,
                                   fontWeight: FontWeight.bold,
                                   color: provider.selectedTileIndices
-                                      .contains(item['Name'])
+                                          .contains(item['Name'])
                                       ? Colors.white
                                       : ColorTheme.maincolor),
                             ),
@@ -70,7 +70,7 @@ class Item_Widget extends StatelessWidget {
                                   fontSize: size * 15,
                                   fontWeight: FontWeight.bold,
                                   color: provider.selectedTileIndices
-                                      .contains(item['Name'])
+                                          .contains(item['Name'])
                                       ? Colors.white
                                       : ColorTheme.maincolor),
                             ),
@@ -80,7 +80,7 @@ class Item_Widget extends StatelessWidget {
                                   fontSize: size * 15,
                                   fontWeight: FontWeight.bold,
                                   color: provider.selectedTileIndices
-                                      .contains(item['Name'])
+                                          .contains(item['Name'])
                                       ? Colors.white
                                       : ColorTheme.maincolor),
                             ),
@@ -90,7 +90,7 @@ class Item_Widget extends StatelessWidget {
                                   fontSize: size * 15,
                                   fontWeight: FontWeight.bold,
                                   color: provider.selectedTileIndices
-                                      .contains(item['Name'])
+                                          .contains(item['Name'])
                                       ? Colors.white
                                       : ColorTheme.maincolor),
                             ),

@@ -17,7 +17,7 @@ class Scan_qr extends StatelessWidget {
     String category = decodedData['Category'];
     int price = decodedData['Price'];
     List<Map<String, dynamic>> listOfMaps =
-    List<Map<String, dynamic>>.from(decodedData['mapList']);
+        List<Map<String, dynamic>>.from(decodedData['mapList']);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -26,11 +26,11 @@ class Scan_qr extends StatelessWidget {
           category,
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
-        leading:IconButton(onPressed: (){
-          Navigator.of(context).pop();
-        },
-            icon: Icon(Icons.arrow_back_ios,color: Colors.white)
-        ),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: Icon(Icons.arrow_back_ios, color: Colors.white)),
       ),
       body: Padding(
         padding: EdgeInsets.all(size * 10),
@@ -57,21 +57,23 @@ class Scan_qr extends StatelessWidget {
               padding: EdgeInsets.only(left: size * 20, right: size * 20),
               child: Container(
                   child: Text(
-                    "Total Amount: ₹$price",
-                    style: TextStyle(
-                        fontSize: size * 18,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                  )),
+                "Total Amount: ₹$price",
+                style: TextStyle(
+                    fontSize: size * 18,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              )),
             ),
             Container(
                 width: size * 130,
                 color: ColorTheme.maincolor,
                 child: FloatingActionButton(
                   onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>
-                        Payment_page()));
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Payment_page()));
                   },
                   child: Text("CONFIRM",
                       style: TextStyle(

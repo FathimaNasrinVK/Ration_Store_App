@@ -5,7 +5,6 @@ import 'package:lottie/lottie.dart';
 import '../../../core/constants/color.dart';
 import '../../First_Page/view/firstpage.dart';
 
-
 class Payment_page extends StatefulWidget {
   @override
   State<Payment_page> createState() => _Payment_pageState();
@@ -34,8 +33,7 @@ class _Payment_pageState extends State<Payment_page> {
               Container(
                 height: size * 200,
                 width: size * 200,
-                child: Lottie.asset(
-                    "assets/animations/success.json"),
+                child: Lottie.asset("assets/animations/success.json"),
               ),
               Text(
                 "Successful ",

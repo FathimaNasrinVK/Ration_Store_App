@@ -2,10 +2,8 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-
 import '../../../core/constants/color.dart';
 import '../../First_Page/view/firstpage.dart';
-
 
 class qr_generation extends StatelessWidget {
   Map<String, dynamic> datas;

@@ -6,7 +6,6 @@ import '../../../../global_widget/item__widget.dart';
 import '../../../First_Page/view/firstpage.dart';
 import '../../ConfirmPage/view/confirm_page.dart';
 
-
 class item_selction extends StatelessWidget {
   String category;
 
@@ -43,9 +42,9 @@ class item_selction extends StatelessWidget {
           } else {
             final docs = snapshot.data!.docs;
             final categoryDocument =
-            docs.firstWhere((doc) => doc.id == category);
+                docs.firstWhere((doc) => doc.id == category);
             final contentsCollection =
-            categoryDocument.reference.collection('content');
+                categoryDocument.reference.collection('content');
             return StreamBuilder(
               stream: contentsCollection.snapshots(),
               builder: (BuildContext context,
@@ -62,12 +61,12 @@ class item_selction extends StatelessWidget {
                         crossAxisCount: 2,
                         // Adjust the cross axis count as needed
                         childAspectRatio:
-                        size / 1.6, // Adjust the aspect ratio as needed
+                            size / 1.6, // Adjust the aspect ratio as needed
                       ),
                       itemCount: subSnapshot.data!.docs.length,
                       itemBuilder: (BuildContext context, int index) {
                         final data = subSnapshot.data!.docs[index].data()
-                        as Map<String, dynamic>;
+                            as Map<String, dynamic>;
                         return Item_Widget(
                           item: data,
                         );

@@ -4,10 +4,9 @@ import 'package:flutter/material.dart';
 import '../../../../core/constants/color.dart';
 import '../../Item_Selection_Page/view/item_selection_page.dart';
 
-
 class id_verification extends StatelessWidget {
-  final ration_num =TextEditingController();
-  final pass =TextEditingController();
+  final ration_num = TextEditingController();
+  final pass = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -17,11 +16,11 @@ class id_verification extends StatelessWidget {
       body: Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
-            width: size*300,
-            padding: EdgeInsets.symmetric(horizontal: size*10),
+            width: size * 300,
+            padding: EdgeInsets.symmetric(horizontal: size * 10),
             decoration: BoxDecoration(
-              color:ColorTheme.primarycolor,
-              borderRadius: BorderRadius.circular(size*10),
+              color: ColorTheme.primarycolor,
+              borderRadius: BorderRadius.circular(size * 10),
             ),
             child: TextField(
               controller: ration_num,
@@ -30,18 +29,21 @@ class id_verification extends StatelessWidget {
               style: TextStyle(color: ColorTheme.maincolor),
               decoration: InputDecoration(
                 hintText: 'Ration Card Number',
-                hintStyle: TextStyle(color:ColorTheme.maincolor ,fontSize: size*14),
+                hintStyle:
+                    TextStyle(color: ColorTheme.maincolor, fontSize: size * 14),
                 border: InputBorder.none,
               ),
             ),
           ),
-          SizedBox(height:size*20 ,),
+          SizedBox(
+            height: size * 20,
+          ),
           Container(
-            width:size* 300,
-            padding: EdgeInsets.symmetric(horizontal: size*10),
+            width: size * 300,
+            padding: EdgeInsets.symmetric(horizontal: size * 10),
             decoration: BoxDecoration(
-              color:ColorTheme.primarycolor,
-              borderRadius: BorderRadius.circular(size*10),
+              color: ColorTheme.primarycolor,
+              borderRadius: BorderRadius.circular(size * 10),
             ),
             child: TextField(
               controller: pass,
@@ -50,21 +52,31 @@ class id_verification extends StatelessWidget {
               style: TextStyle(color: ColorTheme.maincolor),
               decoration: InputDecoration(
                 hintText: 'Password',
-                hintStyle: TextStyle(color: ColorTheme.maincolor,fontSize: size*14),
+                hintStyle:
+                    TextStyle(color: ColorTheme.maincolor, fontSize: size * 14),
                 border: InputBorder.none,
               ),
             ),
           ),
-          SizedBox(height:size*30 ,),
-          ElevatedButton(onPressed: ()=> _signIn(context),
-            style: ElevatedButton.styleFrom(backgroundColor: ColorTheme.maincolor,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6))),
-            child: Text("         OK         ",style: TextStyle(color: ColorTheme.primarycolor),),)
-
+          SizedBox(
+            height: size * 30,
+          ),
+          ElevatedButton(
+            onPressed: () => _signIn(context),
+            style: ElevatedButton.styleFrom(
+                backgroundColor: ColorTheme.maincolor,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(6))),
+            child: Text(
+              "         OK         ",
+              style: TextStyle(color: ColorTheme.primarycolor),
+            ),
+          )
         ]),
       ),
     );
-
   }
+
   Future<void> _signIn(BuildContext context) async {
     final String rationCardNumber = ration_num.text;
     final String password = pass.text;
@@ -79,12 +91,14 @@ class id_verification extends StatelessWidget {
     if (querySnapshot.docs.isNotEmpty) {
       DocumentSnapshot documentSnapshot = querySnapshot.docs.first;
       String category = documentSnapshot['category'];
-      Navigator.push(context, MaterialPageRoute(builder: (context)=>
-          item_selction(category: category)));
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => item_selction(category: category)));
     } else {
-      ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Invalid ration card number or password.'),
-              backgroundColor: Colors.red));
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text('Invalid ration card number or password.'),
+          backgroundColor: Colors.red));
     }
   }
 }

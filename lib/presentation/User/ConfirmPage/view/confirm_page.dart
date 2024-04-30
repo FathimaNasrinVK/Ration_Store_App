@@ -7,6 +7,7 @@ import '../../Qr_Generation_Page/qr_generation_page.dart';
 
 class Confirm_selection extends StatelessWidget {
   String category;
+
   Confirm_selection({required this.category});
 
   @override
@@ -23,15 +24,19 @@ class Confirm_selection extends StatelessWidget {
       backgroundColor: ColorTheme.bgcolor,
       appBar: AppBar(
         backgroundColor: ColorTheme.maincolor,
-        title: Text(category,style: TextStyle(color: Colors.white),),centerTitle: true,
-        leading:IconButton(onPressed: (){
-          Navigator.of(context).pop();
-        },
-            icon: Icon(Icons.arrow_back_ios,color: Colors.white)
+        title: Text(
+          category,
+          style: TextStyle(color: Colors.white),
         ),
+        centerTitle: true,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: Icon(Icons.arrow_back_ios, color: Colors.white)),
       ),
       body: Padding(
-        padding: EdgeInsets.all(size*10),
+        padding: EdgeInsets.all(size * 10),
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, // Adjust the cross axis count as needed
@@ -45,27 +50,44 @@ class Confirm_selection extends StatelessWidget {
           },
         ),
       ),
-
-      floatingActionButton: Container(color: ColorTheme.maincolor,
-        child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      floatingActionButton: Container(
+        color: ColorTheme.maincolor,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Padding(
-              padding:  EdgeInsets.only(left: size*20,right: size*20),
+              padding: EdgeInsets.only(left: size * 20, right: size * 20),
               child: Container(
-                  child: Text("Total Amount: ₹${Provider.of<tile_controller>(context).total}",style:TextStyle(
-                      fontSize: size*18,color: Colors.white,fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,)),
+                  child: Text(
+                "Total Amount: ₹${Provider.of<tile_controller>(context).total}",
+                style: TextStyle(
+                    fontSize: size * 18,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              )),
             ),
-            Container(width: size*130,
-                child: FloatingActionButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>
-                      qr_generation(datas: combinedData,)));
-                },
-                  child: Text("CONFIRM",style:TextStyle(
-                      fontSize: size*20,color: Colors.white,fontWeight: FontWeight.bold)),
-                  shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(size*5)),
+            Container(
+                width: size * 130,
+                child: FloatingActionButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => qr_generation(
+                                  datas: combinedData,
+                                )));
+                  },
+                  child: Text("CONFIRM",
+                      style: TextStyle(
+                          fontSize: size * 20,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold)),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(size * 5)),
                   backgroundColor: ColorTheme.maincolor,
-                  elevation: 0,)),
+                  elevation: 0,
+                )),
           ],
         ),
       ),

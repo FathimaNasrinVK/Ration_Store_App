@@ -5,7 +5,6 @@ import '../../../core/constants/color.dart';
 import '../../Owner/ScanningPage/scannning_page.dart';
 import '../../User/Id_Verification/view/id_selection_page.dart';
 
-
 class user_owner_selection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -24,10 +23,10 @@ class user_owner_selection extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {
                   final provider =
-                  Provider.of<tile_controller>(context, listen: false);
-                  provider.clearCollectionIfNew();
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => id_verification()));
+                      Provider.of<tile_controller>(context, listen: false);
+                  provider.clearCollectiion();
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => id_verification()));
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: ColorTheme.maincolor,

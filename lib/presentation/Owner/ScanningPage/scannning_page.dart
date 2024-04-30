@@ -4,7 +4,6 @@ import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import '../../First_Page/view/firstpage.dart';
 import '../Scanned_Page/scanned_page.dart';
 
-
 class ScannerScreen extends StatefulWidget {
   @override
   _ScannerScreenState createState() => _ScannerScreenState();
